@@ -2,7 +2,7 @@ backend:
   name: github
   repo: lipanpan-hub/xsite   # Path to your Github/Gitlab repository
   branch: master # Branch to update
-  base_url: xsite-sage.vercel.app
+  base_url: https://xsite-sage.vercel.app/
 
 # local_backend: true
 # npx netlify-cms-proxy-server
