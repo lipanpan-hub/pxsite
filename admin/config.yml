@@ -1,0 +1,58 @@
+backend:
+  name: github
+  repo: lipanpan-hub/xsite   # Path to your Github/Gitlab repository
+  branch: master # Branch to update
+  base_url: https://qmmsite.vercel.app/
+
+local_backend: true
+# npx netlify-cms-proxy-server
+
+media_folder: 'source/uploads' 
+public_folder: '/uploads' 
+publish_mode: editorial_workflow
+
+collections:
+  - name: "posts"
+    label: "2021" # Used in the UI, ie.: "New Post"
+    folder: "source/_posts/2021" # The path to the folder where the documents are stored
+    sortable_fields: ['date']
+    create: true # Allow users to create new documents in this collection
+    editor:
+      preview: true
+    fields: # The fields each document in this collection have
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD HH:mm:ss", dateFormat: "YYYY-MM-DD", timeFormat: "HH:mm:ss", required: false}
+      - {label: "Updeted Date", name: "updated", widget: "datetime", format: "YYYY-MM-DD HH:mm:ss", required: false}
+      - {label: "Tags", name: "tags", widget: "list", required: false}
+      - {label: "Categories", name: "categories", widget: "list", required: false}
+      - {label: "Body", name: "body", widget: "markdown", required: false}
+
+  - name: "2020"
+    label: "2020" # Used in the UI, ie.: "New Post"
+    folder: "source/_posts/2020" # The path to the folder where the documents are stored
+    sortable_fields: ['date']
+    create: true # Allow users to create new documents in this collection
+    editor:
+      preview: true
+    fields: # The fields each document in this collection have
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD HH:mm:ss", dateFormat: "YYYY-MM-DD", timeFormat: "HH:mm:ss", required: false}
+      - {label: "Updeted Date", name: "updated", widget: "datetime", format: "YYYY-MM-DD HH:mm:ss", required: false}
+      - {label: "Tags", name: "tags", widget: "list", required: false}
+      - {label: "Categories", name: "categories", widget: "list", required: false}
+      - {label: "Body", name: "body", widget: "markdown", required: false}
+
+  - name: "2019"
+    label: "2019" # Used in the UI, ie.: "New Post"
+    folder: "source/_posts/2019" # The path to the folder where the documents are stored
+    sortable_fields: ['date']
+    create: true # Allow users to create new documents in this collection
+    editor:
+      preview: true
+    fields: # The fields each document in this collection have
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD HH:mm:ss", dateFormat: "YYYY-MM-DD", timeFormat: "HH:mm:ss", required: false}
+      - {label: "Updeted Date", name: "updated", widget: "datetime", format: "YYYY-MM-DD HH:mm:ss", required: false}
+      - {label: "Tags", name: "tags", widget: "list", required: false}
+      - {label: "Categories", name: "categories", widget: "list", required: false}
+      - {label: "Body", name: "body", widget: "markdown", required: false}
