@@ -4,7 +4,7 @@ backend:
   branch: master # Branch to update
   base_url: xsite-lipanpan-hub.vercel.app
 
-local_backend: true
+# local_backend: true
 # npx netlify-cms-proxy-server
 
 media_folder: 'source/uploads' 
