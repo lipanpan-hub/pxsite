@@ -7,8 +7,8 @@ backend:
 # local_backend: true
 # npx netlify-cms-proxy-server
 
-media_folder: 'source/uploads' 
-public_folder: '/uploads' 
+media_folder: 'source/images' 
+public_folder: '/images' 
 publish_mode: editorial_workflow
 
 collections:
