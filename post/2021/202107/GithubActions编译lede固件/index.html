@@ -4,26 +4,26 @@
 <script src="/config.e4814a70b540891e4f9d.js"></script>
 <!-- hexo injector head_begin end -->
 <meta charset="utf-8">
-<title>Vue CLI 使用 - 李攀攀</title>
+<title>GithubActions编译lede固件 - 李攀攀</title>
 <base href="/">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
-<link rel="canonical" href="http://blog.lipanpanx.com/post/2021/202103/Vue-CLI-%E4%BD%BF%E7%94%A8/">
+<link rel="canonical" href="http://blog.lipanpanx.com/post/2021/202107/GithubActions%E7%BC%96%E8%AF%91lede%E5%9B%BA%E4%BB%B6/">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 
-<meta name="description" content="vue cli 是创建vue项目比较常用 工具本文主要记录下 通过 vue create 命令和 vue ui命令创建项目 的过程和他们之间的不同: 通过 vue create 命令创建项目(手动配置)           通过 vue ui命令创建项目(手动配置) 首先开启服务   服务开启后默认浏览器会自动打开这个页面  我们点击中间的创建 按钮就可以创建项目了      按照上面的 创建手动">
+<meta name="description" content="这两天开源界不太平为了防止L大删库跑路,我决定把它的仓库fork到我自己的github账号下面用github actions自己编译固件. fork lede 仓库 lede github仓库地址 进入L大的仓库 直接点击fork即可 我fork的仓库 创建自己的分支 并允许 github actions 仓库创建完成之后 可以在github dev 提供的在线编辑器当中快速的创建一个自己的分支(">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Vue CLI 使用">
-<meta property="og:url" content="http://blog.lipanpanx.com/post/2021/202103/Vue-CLI-%E4%BD%BF%E7%94%A8/index.html">
+<meta property="og:title" content="GithubActions编译lede固件">
+<meta property="og:url" content="http://blog.lipanpanx.com/post/2021/202107/GithubActions%E7%BC%96%E8%AF%91lede%E5%9B%BA%E4%BB%B6/index.html">
 <meta property="og:site_name" content="李攀攀">
-<meta property="og:description" content="vue cli 是创建vue项目比较常用 工具本文主要记录下 通过 vue create 命令和 vue ui命令创建项目 的过程和他们之间的不同: 通过 vue create 命令创建项目(手动配置)           通过 vue ui命令创建项目(手动配置) 首先开启服务   服务开启后默认浏览器会自动打开这个页面  我们点击中间的创建 按钮就可以创建项目了      按照上面的 创建手动">
+<meta property="og:description" content="这两天开源界不太平为了防止L大删库跑路,我决定把它的仓库fork到我自己的github账号下面用github actions自己编译固件. fork lede 仓库 lede github仓库地址 进入L大的仓库 直接点击fork即可 我fork的仓库 创建自己的分支 并允许 github actions 仓库创建完成之后 可以在github dev 提供的在线编辑器当中快速的创建一个自己的分支(">
 <meta property="og:locale">
-<meta property="og:image" content="http://blog.lipanpanx.com/post/2021/202103/Vue-CLI-%E4%BD%BF%E7%94%A8/images/avatar.png">
-<meta property="article:published_time" content="2021-03-12T11:22:09.000Z">
-<meta property="article:modified_time" content="2022-01-31T23:33:48.642Z">
+<meta property="og:image" content="http://blog.lipanpanx.com/post/2021/202107/GithubActions%E7%BC%96%E8%AF%91lede%E5%9B%BA%E4%BB%B6/images/avatar.png">
+<meta property="article:published_time" content="2021-07-31T10:11:17.000Z">
+<meta property="article:modified_time" content="2022-01-31T23:33:48.646Z">
 <meta property="article:author" content="李攀攀">
 <meta property="article:tag" content="李攀攀,博客,李攀攀的博客,前端,vue,vue2,vue3,vuex,vuerouter,javascript,js,es6,ts,typescript,css,sass,scss,less,html">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://blog.lipanpanx.com/post/2021/202103/Vue-CLI-%E4%BD%BF%E7%94%A8/images/avatar.png">
+<meta name="twitter:image" content="http://blog.lipanpanx.com/post/2021/202107/GithubActions%E7%BC%96%E8%AF%91lede%E5%9B%BA%E4%BB%B6/images/avatar.png">
 <link rel="alternate" type="application/atom+xml" title="李攀攀" href="/atom.xml">
 
 <!-- hexo injector head_end start --><style is="theme">html{--inside-accent-color:#2a2b33;--inside-foreground-color:#363636;--inside-border-color:#e0e0e0;--inside-background:#7c7c8f;--inside-sidebar-background:#2a2b33;--inside-card-background:#fff;--inside-font-base:'Josefin Sans','PingFang SC';--inside-font-logo:-apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;--inside-font-menu:Baloo Bhaijaan,'Josefin Sans','PingFang SC';--inside-font-heading:-apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;--inside-font-label:Montserrat,'Josefin Sans','PingFang SC';--inside-font-code:Inconsolata,monospace;--inside-font-print:-apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;--inside-content-width:850px;--inside-highlight-00:#ffffff;--inside-highlight-01:#e0e0e0;--inside-highlight-02:#f3f6f7;--inside-highlight-03:#95a5b3;--inside-highlight-04:#363636;--inside-highlight-05:#262b2f;--inside-highlight-06:#000000;--inside-highlight-07:#000000;--inside-highlight-08:#5d6c7b;--inside-highlight-09:#40464a;--inside-highlight-0a:#2980b9;--inside-highlight-0b:#be516e;--inside-highlight-0c:#237dac;--inside-highlight-0d:#944770;--inside-highlight-0e:#239371;--inside-highlight-0f:#edf0f3;--inside-card-color:#fff;--inside-accent-color-005:rgba(42,43,51,.05);--inside-accent-color-01:rgba(42,43,51,.1);--inside-accent-color-02:rgba(42,43,51,.2);--inside-accent-color-04:rgba(42,43,51,.4);--inside-accent-color-08:rgba(42,43,51,.8)}</style><script src="/theme.9ecc9ab1.js"></script><link href="//cdn.jsdelivr.net/gh/fiteen/fiteen.github.io@v0.1.0/font.css" rel="stylesheet"></link>
